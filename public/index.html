@@ -8,7 +8,8 @@
     <header>
       
     </header>
-    <main>
+    <main ng-view>
+
     </main>
     <footer></footer>
     <!-- AngularJS -->
@@ -24,6 +25,10 @@
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
 
-    <script src="app/app.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/components/login.component.js"></script>
+    <script src="app/components/home.component.js"></script>
+    <script src="app/routes/routes.js"></script>
+    <script src="app/services/firebase.service.js"></script>
   </body>
 </html>
