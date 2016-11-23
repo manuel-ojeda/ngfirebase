@@ -23,5 +23,17 @@
 	ngCtrl.$inject = ['$firebaseAuth'];
 	function ngCtrl($firebaseAuth) {
 		let ng = this;
+
+		ng.auth = $firebaseAuth;
+		ng.login = login;
+
+		function login() {
+			ng.auth.$signInWIthPopup('facebook')
+				.then(function(firebaseUser) {
+					console.log('Signed in as: ' + firebaseUser.user.displayName)
+				}).catch(function(error) {
+					console.log('Authentication failed', error);
+				})
+		}
 	}
 })();
