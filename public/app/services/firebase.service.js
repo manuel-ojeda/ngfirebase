@@ -7,6 +7,6 @@
 
 	Auth.$inject = ["$firebaseAuth"];
 	function Auth($firebaseAuth) {
-		return $firebaseAuth;
+		return $firebaseAuth();
 	}
 })();

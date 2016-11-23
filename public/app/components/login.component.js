@@ -27,9 +27,10 @@
 		ng.auth = $firebaseAuth();
 		ng.login = login;
 
-		function login() {
-			ng.auth.$signInWithPopup('facebook')
+		function login(social) {
+			ng.auth.$signInWithPopup(social)
 				.then(function(firebaseUser) {
+					window.location.replace('/#/home');
 					console.log('Signed in as: ' + firebaseUser.user.displayName)
 				}).catch(function(error) {
 					console.log('Authentication failed', error);
